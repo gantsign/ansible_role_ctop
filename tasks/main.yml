@@ -1,2 +1,31 @@
 ---
-# tasks file for ansible_role_ctop
+- name: create download directory
+  file:
+    state: directory
+    mode: 'u=rwx,go=rx'
+    dest: '{{ ctop_download_dir }}'
+
+- name: download ctop
+  get_url:
+    url: '{{ ctop_mirror }}/{{ ctop_redis_filename }}'
+    dest: '{{ ctop_download_dir }}/{{ ctop_redis_filename }}'
+    checksum: 'sha256:{{ ctop_redis_sha256sum }}'
+    mode: 'u=rw,go=r'
+
+- name: create the ctop installation dir
+  become: yes
+  file:
+    state: directory
+    owner: root
+    group: root
+    mode: 'u=rwx,go=rx'
+    dest: '{{ ctop_install_dir }}'
+
+- name: install ctop
+  become: yes
+  copy:
+    src: '{{ ctop_download_dir }}/{{ ctop_redis_filename }}'
+    remote_src: yes
+    dest: '{{ ctop_install_path }}'
+    force: yes
+    mode: 'u=rwx,go=rx'
