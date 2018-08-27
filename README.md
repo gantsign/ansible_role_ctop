@@ -1,5 +1,5 @@
 Ansible Role: ctop
-======================
+==================
 
 [![Build Status](https://travis-ci.com/gantsign/ansible_role_ctop.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_ctop)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.ctop-blue.svg)](https://galaxy.ansible.com/gantsign/ctop)
