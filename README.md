@@ -57,10 +57,10 @@ are shown below):
 
 ```yaml
 # ctop version number
-ctop_version: '0.7.1'
+ctop_version: '0.7.2'
 
 # SHA256 sum for the ctop redistributable
-ctop_redis_sha256sum: '38cfd92618ba2d92e0e1262c0c43d7690074b4b8dc77844b654f8e565166b577'
+ctop_redis_sha256sum: 'e1af73e06f03caf0c59ac488c1cda97348871f6bb47772c31bbd314ddc494383'
 
 # Directory to store files downloaded for ctop
 ctop_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
