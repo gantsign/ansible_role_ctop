@@ -12,6 +12,11 @@
     checksum: 'sha256:{{ ctop_redis_sha256sum }}'
     mode: 'u=rw,go=r'
 
+- name: check if ctop installation directory exists
+  stat:
+    path: '{{ ctop_install_dir }}'
+  register: ctop_dir_check
+
 - name: create the ctop installation dir
   become: yes
   file:
@@ -20,6 +25,7 @@
     group: root
     mode: 'u=rwx,go=rx'
     dest: '{{ ctop_install_dir }}'
+  when: not ctop_dir_check.stat.exists
 
 - name: install ctop
   become: yes

@@ -8,11 +8,11 @@ ctop_install_path: '{{ ctop_install_dir }}/ctop'
 # Mirror to download the ctop from
 ctop_mirror: 'https://github.com/bcicen/ctop/releases/download/v{{ ctop_version }}'
 
-# The OS of the ctop redistributable
-ctop_os: 'linux'
+# The OS of the ctop redistributable - should be automatically determined
+# ctop_os: 'linux'
 
-# The CPU architecture of the ctop redistributable
-ctop_architecture: 'amd64'
+# The CPU architecture of the ctop redistributable - should be automatically determined
+# ctop_architecture: 'amd64'
 
 # File name of the ctop redistributable file
 ctop_redis_filename: 'ctop-{{ ctop_version }}-{{ ctop_os }}-{{ ctop_architecture }}'

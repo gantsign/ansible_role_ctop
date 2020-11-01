@@ -2,8 +2,24 @@
 # ctop version number
 ctop_version: '0.7.4'
 
-# SHA256 sum for the ctop redistributable
-ctop_redis_sha256sum: '43d41ed0b2bb5cfc2aaa7b7fdd2d6cb515f6d88adc40ff40e3ec1f560e8a4413'
+# SHA256 sum for the different versions of the ctop redistributable
+ctop_redis_sha256sums:
+  linux:
+    amd64: '43d41ed0b2bb5cfc2aaa7b7fdd2d6cb515f6d88adc40ff40e3ec1f560e8a4413'
+    arm: '6912c057823cb0a5db8bd048d023092bd5bf8ea82403cc86b3021fcd76c742ed'
+    arm64: '16c3f7e0ace1bf9bb8d1170acec1563f1f2d858dbd720c62c01f7cb44ca2139e'
+  darwin:
+    amd64: 'fdcb7e1838d78847ddc29196f819a54ba6716eef8299d43d9cbacd40a08e81af'
+  windows:
+    amd64: 'a0560954705484c07a421d414b140bcd08be8bd71209523c7e0921eb702c8827'
+
+# The OS of the ctop redistributable
+ctop_os: '{{ ansible_system | lower }}'
+# The CPU architecture of the ctop redistributable
+ctop_architecture: '{% if ansible_architecture.startswith("arm") %}{% if ansible_userspace_bits == 64 %}arm64{% else %}arm{% endif %}{% else %}amd64{% endif %}'
+
+# Look up the SHA256 of the ctop redistributable
+ctop_redis_sha256sum: '{{ ctop_redis_sha256sums[ctop_os][ctop_architecture] }}'
 
 # Directory to store files downloaded for ctop
 ctop_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"

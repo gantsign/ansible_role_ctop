@@ -28,6 +28,10 @@ Requirements
             * Xenial (16.04)
             * Bionic (18.04)
 
+        * Raspbian
+            
+            * 10
+        
     * RedHat Family
 
         * CentOS
@@ -45,6 +49,13 @@ Requirements
             * 15.1
 
     * Note: other versions are likely to work but have not been tested.
+
+* MacOS
+    * High Sierra (10.13)  
+    * Mojave (10.14)
+    * Catalina (10.15)
+    * Big Sur (11.0)
+
 
 * Docker (already installed)
 
@@ -64,6 +75,15 @@ ctop_redis_sha256sum: '43d41ed0b2bb5cfc2aaa7b7fdd2d6cb515f6d88adc40ff40e3ec1f560
 # Directory to store files downloaded for ctop
 ctop_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
 ```
+
+The role should automatically determine your operating system and architecture.
+If it does not, then these can be set with:
+
+* `ctop_os`: tested with `linux` and `darwin`
+* `ctop_architecture`: tested with `amd64`, `arm`, and `arm64`.
+
+Note that combinations of these values only work to the extent that there are
+pre-built binaries of ctop available.
 
 Example Playbook
 ----------------
