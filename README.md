@@ -1,7 +1,7 @@
 Ansible Role: ctop
 ==================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible_role_ctop.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_ctop)
+[![Tests](https://github.com/gantsign/ansible_role_ctop/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible_role_ctop/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.ctop-blue.svg)](https://galaxy.ansible.com/gantsign/ctop)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_ctop/master/LICENSE)
 
