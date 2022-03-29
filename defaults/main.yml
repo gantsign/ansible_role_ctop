@@ -1,9 +1,9 @@
 ---
 # ctop version number
-ctop_version: '0.7.6'
+ctop_version: '0.7.7'
 
 # SHA256 sum for the ctop redistributable
-ctop_redis_sha256sum: 'c5f8da250ec733084fb3891f2f8d04a49ffd25e81af59079216f2e6bb35fd983'
+ctop_redis_sha256sum: 'b78374734ebe3d14b6edee3d5512c911c250d7fa7f3f964cb00acd3bc5a02a09'
 
 # Directory to store files downloaded for ctop
 ctop_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"

@@ -6,7 +6,7 @@ ctop_install_dir: '/usr/local/bin'
 ctop_install_path: '{{ ctop_install_dir }}/ctop'
 
 # Mirror to download the ctop from
-ctop_mirror: 'https://github.com/bcicen/ctop/releases/download/{{ ctop_version }}'
+ctop_mirror: 'https://github.com/bcicen/ctop/releases/download/v{{ ctop_version }}'
 
 # The OS of the ctop redistributable
 ctop_os: 'linux'
